@@ -12,5 +12,6 @@ public class ScenesManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+        Debug.Log("Saiu");
     }
 }
