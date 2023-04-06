@@ -7,6 +7,9 @@ public class ObstSpawner : MonoBehaviour
     public GameObject[] prefabs;
     public static float speed = 10f;
 
+    private int inverter = 0;
+    private Vector3 pos;
+
     void Start()
     {
 
@@ -24,9 +27,11 @@ public class ObstSpawner : MonoBehaviour
     {
         while (true)
         {
+            inverter = Random.Range(0, 2);
+            pos = this.transform.position + new Vector3(20, 0, 0);
 
             // create a new obstacle from prefab selection at right edge of screen
-            Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(20, -4, 0),
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], pos,
                 Quaternion.identity);
 
             // randomly increase the speed by 1
