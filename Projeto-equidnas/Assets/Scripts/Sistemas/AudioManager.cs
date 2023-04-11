@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.loop = s.loop;
-            s.source.volume = PlayerPrefs.GetFloat("VolumePref");
+            s.source.volume = s.volume;
 
             s.source.outputAudioMixerGroup = mixerGroup;
         }
@@ -64,6 +64,25 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source.Stop();
+        }
+    }
+   
+    public IEnumerator PlayLevelSounds()
+    {
+        string[] clips = new string[2] { "vestir_intro", "vestir_loop" };
+
+        yield return null;
+
+        for (int i = 0; i < clips.Length; i++)
+        {
+            Sound s = Array.Find(sounds, item => item.name == clips[i]);
+            Debug.Log("PlayingSounds " + s.name);
+            s.source.Play();
+
+            while (s.source.isPlaying)
+            {
+                yield return null;
+            }
         }
     }
 }
