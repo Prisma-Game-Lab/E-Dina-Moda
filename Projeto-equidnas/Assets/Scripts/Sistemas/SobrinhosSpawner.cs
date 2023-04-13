@@ -30,7 +30,7 @@ public class SobrinhosSpawner : MonoBehaviour
             inverter = Random.Range(0, 2);
             pos = this.transform.position + new Vector3(20, 0, 0);
 
-            // create a new obstacle from prefab selection at right edge of screen
+            // create a new sobrinho from prefab selection at right edge of screen
             Instantiate(prefabs[Random.Range(0, prefabs.Length)], pos,
                 Quaternion.identity);
 
@@ -40,8 +40,8 @@ public class SobrinhosSpawner : MonoBehaviour
                 speed += 1f;
             }
 
-            // wait between 1-5 seconds for a new skyscraper to spawn
-            yield return new WaitForSeconds(Random.Range(1, 5));
+            // wait between 1-5 seconds for a new sobrinho to spawn
+            yield return new WaitForSeconds(10);
         }
     }
 }
