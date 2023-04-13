@@ -1868,6 +1868,7 @@ GameObject:
   - component: {fileID: 594467449}
   - component: {fileID: 594467448}
   - component: {fileID: 594467447}
+  - component: {fileID: 594467450}
   m_Layer: 5
   m_Name: ChapeuSapo
   m_TagString: Accessory
@@ -1948,6 +1949,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594467445}
   m_CullTransparentMesh: 1
+--- !u!225 &594467450
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594467445}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &620733314
 GameObject:
   m_ObjectHideFlags: 0
