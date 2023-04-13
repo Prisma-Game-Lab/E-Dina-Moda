@@ -10,7 +10,22 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+            var dragDrop = eventData.pointerDrag.GetComponent<DragDrop>();
+
+            if(eventData.pointerDrag.CompareTag(gameObject.tag))
+            {
+                eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+                dragDrop.inSlot = true;
+                Debug.Log("a");
+
+            }
+            else if(eventData.pointerDrag.CompareTag("Accessory"))
+            {
+                dragDrop.inSlot = true;
+                Debug.Log("aa");
+            }
+
+            Debug.Log(eventData.pointerDrag.name);
         }
     }
 }

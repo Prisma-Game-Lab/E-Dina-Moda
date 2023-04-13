@@ -7,6 +7,9 @@ TagManager:
   - "\xC1gua"
   - Floor
   - Obstacle
+  - Shoe
+  - Accessory
+  - Clothes
   layers:
   - Default
   - TransparentFX
