@@ -53,6 +53,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
                 GetComponent<Image>().sprite = originalSprite;
             }
         }
+        HideCloset hideCloset = GetComponentInParent<HideCloset>();
+        if(hideCloset != null)
+        {
+            hideCloset.UpdateSprites();
+        }
     }
     public void OnPointerDown(PointerEventData eventData)
     {
