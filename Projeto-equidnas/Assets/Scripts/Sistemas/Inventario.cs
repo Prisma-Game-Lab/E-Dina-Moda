@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventario : MonoBehaviour
 {
     // A lista de itens do inventário
-    private List<GameObject> itens = new List<GameObject>();
+    public static List<GameObject> itens = new List<GameObject>();
 
     // Adiciona um item ao inventário
     public void AdicionarItem(GameObject item)

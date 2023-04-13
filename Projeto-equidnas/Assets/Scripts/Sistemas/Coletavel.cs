@@ -5,8 +5,16 @@ using UnityEngine;
 public class Coletavel : MonoBehaviour
 {
     // O inventário onde o objeto coletável será armazenado
-    public GameObject inventario;
+    
     public bool colisao = false;
+    public GameObject roupa;
+    public Inventario inventario;
+
+    void Start()
+    {
+        GameObject inventarioObject = GameObject.Find("Inventario");
+        inventario = inventarioObject.GetComponent<Inventario>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,9 +26,8 @@ public class Coletavel : MonoBehaviour
             gameObject.SetActive(false);
 
             // Adiciona o objeto ao inventário
-            inventario.GetComponent<Inventario>().AdicionarItem(gameObject);
+            inventario.AdicionarItem(roupa);
 
-           
         }
     }
 }
