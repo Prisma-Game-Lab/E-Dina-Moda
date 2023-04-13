@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEndDragHandler, IDragHandler
 {
@@ -11,12 +12,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
     [HideInInspector]
     public Vector3 initialPosition;
     public bool inSlot;
+    [HideInInspector]
+    public Sprite originalSprite;
+    public Sprite alternativeSprite;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         initialPosition = GetComponent<RectTransform>().position;
+        originalSprite = GetComponent<Image>().sprite;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -43,6 +48,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
         if(inSlot == false)
         {
             rectTransform.position = initialPosition;
+            if(CompareTag("Shoe"))
+            {
+                GetComponent<Image>().sprite = originalSprite;
+            }
         }
     }
     public void OnPointerDown(PointerEventData eventData)
