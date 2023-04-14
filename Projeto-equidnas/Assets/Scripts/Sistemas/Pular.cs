@@ -32,6 +32,13 @@ public class Pular : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
+        if(transform.position.y >= 0)
+        {
+            AudioManager.instance.StopSound("mergulhando");
+
+        }
+
     }
 
     void OnJump()
@@ -46,11 +53,15 @@ public class Pular : MonoBehaviour
             rb.gravityScale = 1f;
             rb.AddForce(new Vector2(0, Strengh), ForceMode2D.Impulse);
         } 
+       
         else if (diving) 
         {
             rb.AddForce(new Vector2(0, Strengh), ForceMode2D.Impulse);
             diving = false;
+
         }
+
+        AudioManager.instance.Play("saindo_da_agua");
     }
 
     void OnDive()
@@ -64,11 +75,17 @@ public class Pular : MonoBehaviour
 
             rb.gravityScale = -1f;
             rb.AddForce(new Vector2(0, -Strengh), ForceMode2D.Impulse);
+
+
         }
+        
         else if (jumping){
             rb.AddForce(new Vector2(0, -Strengh), ForceMode2D.Impulse);
             jumping = false;
         }
+
+        AudioManager.instance.StopSound("saindo_da_agua");
+        AudioManager.instance.Play("mergulhando");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

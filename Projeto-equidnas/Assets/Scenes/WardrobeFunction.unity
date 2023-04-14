@@ -1481,7 +1481,7 @@ MonoBehaviour:
   sounds:
   - name: captura_sobrinho
     clip: {fileID: 8300000, guid: e4cf5ad6f5f3e5d418fbafba4bb74899, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: colisao
     clip: {fileID: 8300000, guid: 44b4060dd1345024eb798e1352cf1bee, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0
@@ -1499,7 +1499,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: mergulhando
     clip: {fileID: 8300000, guid: 49c42d45eefe7f343aaae5174e31e8a4, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0
@@ -1535,7 +1535,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: saindo_da_agua
     clip: {fileID: 8300000, guid: 8e5585cf0e4431343ab2ed63a5859f71, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0
@@ -1544,7 +1544,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: splash
     clip: {fileID: 8300000, guid: 11eb65710de16d646a53f277a117cb2d, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0
