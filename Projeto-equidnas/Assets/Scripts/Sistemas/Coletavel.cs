@@ -21,7 +21,7 @@ public class Coletavel : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             colisao = true;
-
+            AudioManager.instance.Play("captura_sobrinho");
              // Desativa o objeto coletável na cena atual
             gameObject.SetActive(false);
 
