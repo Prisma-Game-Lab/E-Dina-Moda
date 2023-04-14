@@ -1,14 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HideCloset : MonoBehaviour
 {
     public bool isOpen;
+    public Sprite closedCloset;
+    public Sprite openCloset;
 
     public void Awake()
     {
         UpdateSprites();
+        if(isOpen)
+        {
+            GetComponent<Image>().sprite = openCloset;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = closedCloset;
+        }
     }
 
     public void UpdateSprites()
@@ -27,5 +38,13 @@ public class HideCloset : MonoBehaviour
     {
         isOpen = !isOpen;
         UpdateSprites();
+        if(isOpen)
+        {
+            GetComponent<Image>().sprite = openCloset;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = closedCloset;
+        }
     }
 }
