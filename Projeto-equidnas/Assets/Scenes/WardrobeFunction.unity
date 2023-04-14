@@ -1526,7 +1526,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: plim
     clip: {fileID: 8300000, guid: d30a37a489f7c884f89f09081dcb974c, type: 3}
-    volume: 0
+    volume: 0.5
     volumeVariance: 0
     pitch: 0
     pitchVariance: 0

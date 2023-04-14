@@ -52,12 +52,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
             {
                 GetComponent<Image>().sprite = originalSprite;
             }
+
+            return;
+
         }
         HideCloset hideCloset = GetComponentInParent<HideCloset>();
         if(hideCloset != null)
         {
             hideCloset.UpdateSprites();
         }
+
+        AudioManager.instance.Play("plim");
+
     }
     public void OnPointerDown(PointerEventData eventData)
     {
