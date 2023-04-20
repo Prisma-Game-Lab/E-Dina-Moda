@@ -17,7 +17,7 @@ public class TakeScreenshot : MonoBehaviour {
         //Gustavo: desabilita a UI
         ui.SetActive(false);
         yield return new WaitForSeconds(0.1f);
-        
+
         // We should only read the screen after all rendering is complete
         yield return new WaitForEndOfFrame();
  
@@ -43,7 +43,9 @@ public class TakeScreenshot : MonoBehaviour {
  
         #if !UNITY_EDITOR
         openWindow(image_url);
+        Debug.Log("AbreJanelaBrowser");
         #endif
+        Debug.Log("AbreJanelaUnity");
 
         //Gustavo: habilita a UI
         yield return new WaitForSeconds(0.1f);
