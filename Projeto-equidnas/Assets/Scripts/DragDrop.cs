@@ -20,7 +20,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        initialPosition = GetComponent<RectTransform>().position;
+        initialPosition = GetComponent<RectTransform>().anchoredPosition;
+        Debug.Log(gameObject.name + initialPosition);
         originalSprite = GetComponent<Image>().sprite;
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -47,7 +48,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler,IBeginDragHandler,IEn
         canvasGroup.blocksRaycasts = true;
         if(inSlot == false)
         {
-            rectTransform.position = initialPosition;
+            rectTransform.anchoredPosition = initialPosition;
             if(CompareTag("Shoe"))
             {
                 GetComponent<Image>().sprite = originalSprite;

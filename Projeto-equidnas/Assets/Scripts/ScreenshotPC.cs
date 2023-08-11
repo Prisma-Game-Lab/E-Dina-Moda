@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Screenshot : MonoBehaviour
+public class ScreenshotPC : MonoBehaviour
 {    
     
     public GameObject ui;
